@@ -4,6 +4,26 @@
 yarn create astro --template jungley8/astro-landing-page
 ```
 
+## Setup
+
+Install yarn
+
+```shell
+npm install --global yarn
+```
+
+Install dependencies
+
+```shell
+yarn
+```
+
+## Astro
+
+## References
+
+[Social Icons](https://tailwind-elements.com/docs/standard/components/social-buttons/)
+
 ## 🚀 Project Structure
 
 Inside of your Astro project, you'll see the following folders and files:
