@@ -1,51 +1,38 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
-import Newsletter from '../components/Newsletter';
-import CTA from '@/components/CTA';
-import Data from '@/components/Data';
-import Feature from '@/components/Feature';
-import Stats from '@/components/Stats';
+import { videoPromoPath } from '@/layouts/common';
 ---
 
 <Layout title="Survey Night">
+  <div class="mx-auto">
+    <video class="w-full" autoplay loop>
+      <source src={videoPromoPath} type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
   <main class="mx-auto max-w-7xl py-12 lg:py-24">
     <h1>Survey <span class="text-gradient">Night</span></h1>
-    <p class="instructions">
-      To get started, open the directory <code>src/pages</code> in your project.<br
-      />
-      <strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
+    <p class="instructions text-center">
+      Cambia la tua serata con un <strong>click</strong>
     </p>
     <ul role="list" class="link-card-grid">
       <Card
-        href="https://docs.astro.build/"
-        title="Documentation"
-        body="Learn how Astro works and explore the official API docs."
+        href="/events"
+        title="Il Tour"
+        body="Scopri le prossime date del tour"
       />
       <Card
-        href="https://astro.build/integrations/"
-        title="Integrations"
-        body="Supercharge your project with new frameworks and libraries."
-      />
-      <Card
-        href="https://astro.build/themes/"
-        title="Themes"
-        body="Explore a galaxy of community-built starter themes."
-      />
-      <Card
-        href="https://astro.build/chat/"
-        title="Community"
-        body="Come say hi to our amazing Discord community. ❤️"
+        href="/contact"
+        title="Partnership"
+        body="Ospita una serata diversa dalle altre: organizza con noi una Survey Night!"
       />
     </ul>
   </main>
-  <Feature />
-  <CTA />
-  <Data />
   <div class="bg-white py-16 sm:py-24">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
       <h2 class="text-center text-lg font-semibold leading-8 text-gray-900">
-        Trusted by the world’s most innovative teams
+        Sponsors
       </h2>
       <div
         class="mx-auto mt-10 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5"
@@ -88,8 +75,6 @@ import Stats from '@/components/Stats';
       </div>
     </div>
   </div>
-  <Stats />
-  <Newsletter client:only="react" />
 </Layout>
 <style>
   main {

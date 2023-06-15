@@ -16,6 +16,7 @@ import {
 } from '@heroicons/react/20/solid';
 import classNames from 'classnames';
 import Social from '../components/Social';
+import { logoPath } from './common';
 
 const music = [
   {
@@ -54,8 +55,6 @@ const callsToAction = [
   { name: 'Contact sales', href: '#', icon: PhoneIcon },
 ];
 
-const logoPath = '/logo.jpeg';
-
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -67,8 +66,7 @@ export default function Header() {
       >
         <div className="flex lg:flex-1">
           <a href="/" className="-m-1.5 p-1.5">
-            <span className="sr-only">Your Company</span>
-            <img className="h-16 w-auto" src={logoPath} alt="" />
+            <img className="h-16 w-auto rounded-full" src={logoPath} alt="" />
           </a>
         </div>
         <div className="flex lg:hidden">
@@ -144,13 +142,6 @@ export default function Header() {
               </Popover.Panel>
             </Transition>
           </Popover>
-
-          <a
-            href="/#gallery"
-            className="text-sm font-semibold leading-6 text-gray-900"
-          >
-            Gallery
-          </a>
           <a
             href="/survey"
             className="text-sm font-semibold leading-6 text-gray-900"
@@ -179,7 +170,7 @@ export default function Header() {
           <div className="flex items-center justify-between">
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
-              <img className="h-8 w-auto" src={logoPath} alt="" />
+              <img className="h-8 w-auto rounded-full" src={logoPath} alt="" />
             </a>
             <button
               type="button"
@@ -222,19 +213,13 @@ export default function Header() {
                   )}
                 </Disclosure>
                 <a
-                  href="/#gallery"
-                  className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                >
-                  Gallery
-                </a>
-                <a
                   href="/survey"
                   className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   Survey
                 </a>
                 <a
-                  href="/partnership"
+                  href="/contact"
                   className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   Partnership
