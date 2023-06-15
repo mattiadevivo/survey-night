@@ -15,8 +15,10 @@ import {
   PlayCircleIcon,
 } from '@heroicons/react/20/solid';
 import classNames from 'classnames';
+import Social from '../components/Social';
+import { logoPath } from './common';
 
-const products = [
+const music = [
   {
     name: 'Analytics',
     description: 'Get a better understanding of your traffic',
@@ -64,12 +66,7 @@ export default function Header() {
       >
         <div className="flex lg:flex-1">
           <a href="/" className="-m-1.5 p-1.5">
-            <span className="sr-only">Your Company</span>
-            <img
-              className="h-8 w-auto"
-              src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-              alt=""
-            />
+            <img className="h-16 w-auto rounded-full" src={logoPath} alt="" />
           </a>
         </div>
         <div className="flex lg:hidden">
@@ -85,7 +82,7 @@ export default function Header() {
         <Popover.Group className="hidden lg:flex lg:gap-x-12">
           <Popover className="relative">
             <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
-              Product
+              Music
               <ChevronDownIcon
                 className="h-5 w-5 flex-none text-gray-400"
                 aria-hidden="true"
@@ -103,7 +100,7 @@ export default function Header() {
             >
               <Popover.Panel className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5">
                 <div className="p-4">
-                  {products.map((item) => (
+                  {music.map((item) => (
                     <div
                       key={item.name}
                       className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50"
@@ -145,39 +142,21 @@ export default function Header() {
               </Popover.Panel>
             </Transition>
           </Popover>
-
           <a
-            href="/#newsletter"
+            href="/survey"
             className="text-sm font-semibold leading-6 text-gray-900"
           >
-            Newsletter
-          </a>
-          <a
-            href="/price"
-            className="text-sm font-semibold leading-6 text-gray-900"
-          >
-            Price
+            Survey
           </a>
           <a
             href="/contact"
             className="text-sm font-semibold leading-6 text-gray-900"
           >
-            Contact
-          </a>
-          <a
-            href="/blog"
-            className="text-sm font-semibold leading-6 text-gray-900"
-          >
-            Blog
+            Partnership
           </a>
         </Popover.Group>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a
-            href="/signin"
-            className="text-sm font-semibold leading-6 text-gray-900"
-          >
-            Log in <span aria-hidden="true">&rarr;</span>
-          </a>
+        <div className="hidden  lg:flex lg:flex-1 lg:justify-end lg:gap-x-2">
+          <Social />
         </div>
       </nav>
       <Dialog
@@ -191,11 +170,7 @@ export default function Header() {
           <div className="flex items-center justify-between">
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
-              <img
-                className="h-8 w-auto"
-                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                alt=""
-              />
+              <img className="h-8 w-auto rounded-full" src={logoPath} alt="" />
             </a>
             <button
               type="button"
@@ -213,7 +188,7 @@ export default function Header() {
                   {({ open }) => (
                     <>
                       <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 hover:bg-gray-50">
-                        Product
+                        Music
                         <ChevronDownIcon
                           className={classNames(
                             open ? 'rotate-180' : '',
@@ -223,7 +198,7 @@ export default function Header() {
                         />
                       </Disclosure.Button>
                       <Disclosure.Panel className="mt-2 space-y-2">
-                        {[...products, ...callsToAction].map((item) => (
+                        {[...music, ...callsToAction].map((item) => (
                           <Disclosure.Button
                             key={item.name}
                             as="a"
@@ -238,37 +213,20 @@ export default function Header() {
                   )}
                 </Disclosure>
                 <a
-                  href="/#newsletter"
+                  href="/survey"
                   className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
-                  Newsletter
-                </a>
-                <a
-                  href="/price"
-                  className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                >
-                  Price
+                  Survey
                 </a>
                 <a
                   href="/contact"
                   className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
-                  Contact
-                </a>
-                <a
-                  href="/blog"
-                  className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                >
-                  Blog
+                  Partnership
                 </a>
               </div>
-              <div className="py-6">
-                <a
-                  href="/signin"
-                  className="-mx-3 block rounded-lg py-2.5 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                >
-                  Log in
-                </a>
+              <div className="py-6 space-x-2">
+                <Social />
               </div>
             </div>
           </div>
