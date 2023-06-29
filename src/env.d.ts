@@ -3,7 +3,9 @@
 interface ImportMetaEnv {
   //   readonly DB_PASSWORD: string;
   //   readonly PUBLIC_POKEAPI: string;
-  // more env variables...
+  readonly PUBLIC_EMAILJS_SERVICE_ID: string;
+  readonly PUBLIC_EMAILJS_TEMPLATE_ID: string;
+  readonly PUBLIC_EMAILJS_PUBLIC_KEY: string;
 }
 
 interface ImportMeta {
