@@ -7,7 +7,7 @@ import vercel from '@astrojs/vercel/serverless';
 
 // https://astro.build/config
 export default defineConfig({
-  output: 'static',
+  output: 'server',
   site: 'https://www.surveynight.com',
   // if 使用 docker, 请将 adapter 切换到 node
   // adapter: node({
