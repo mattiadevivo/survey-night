@@ -7,15 +7,8 @@ import vercel from '@astrojs/vercel/serverless';
 
 // https://astro.build/config
 export default defineConfig({
-  output: 'server',
+  output: 'static',
   site: 'https://www.surveynight.com',
-  // if 使用 docker, 请将 adapter 切换到 node
-  // adapter: node({
-  //   mode: 'standalone'
-  // }),
-  adapter: vercel({
-    analytics: true,
-  }),
   integrations: [react(), tailwind()],
   markdown: {
     // Example: Switch to use prism for syntax highlighting in Markdown
