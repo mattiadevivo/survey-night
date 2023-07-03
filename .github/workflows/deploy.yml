@@ -26,8 +26,11 @@ jobs:
           echo PUBLIC_EMAILJS_SERVICE_ID=${{ secrets.PUBLIC_EMAILJS_SERVICE_ID }} >> .env
           echo PUBLIC_EMAILJS_TEMPLATE_ID=${{ secrets.PUBLIC_EMAILJS_TEMPLATE_ID }} >> .env
           echo PUBLIC_EMAILJS_PUBLIC_KEY=${{ secrets.PUBLIC_EMAILJS_PUBLIC_KEY }} >> .env
+          cat .env
       - name: Install, build, and upload your site
         uses: withastro/action@v0
+        env:
+          
         # with:
             # path: . # The root location of your Astro project inside the repository. (optional)
             # node-version: 16 # The specific version of Node that should be used to build your site. Defaults to 16. (optional)
