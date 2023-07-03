@@ -20,6 +20,12 @@ jobs:
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v3
+      - name: Create Env File
+        run: |
+          touch .env
+          echo PUBLIC_EMAILJS_SERVICE_ID=${{ secrets.PUBLIC_EMAILJS_SERVICE_ID }} >> .env
+          echo PUBLIC_EMAILJS_TEMPLATE_ID=${{ secrets.PUBLIC_EMAILJS_TEMPLATE_ID }} >> .env
+          echo PUBLIC_EMAILJS_PUBLIC_KEY=${{ secrets.PUBLIC_EMAILJS_PUBLIC_KEY }} >> .env
       - name: Install, build, and upload your site
         uses: withastro/action@v0
         # with:
